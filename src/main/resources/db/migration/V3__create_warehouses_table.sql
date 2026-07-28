@@ -1,0 +1,9 @@
+CREATE TABLE warehouses (
+    id          BIGINT AUTO_INCREMENT PRIMARY KEY,
+    code        VARCHAR(30)   NOT NULL,
+    name        VARCHAR(150)  NOT NULL,
+    location    VARCHAR(255),
+    created_at  DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at  DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT uk_warehouses_code UNIQUE (code)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
